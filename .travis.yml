@@ -9,14 +9,15 @@ script:
   - docker run timmcnamaradev/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t timmcnamaradev/multi-client ./client
   - docker build -t timmcnamaradev/multi-nginx ./nginx
   - docker build -t timmcnamaradev/multi-server ./server
   - docker build -t timmcnamaradev/multi-worker ./worker
+  - docker build -t timmcnamaradev/multi-client ./client
   # Log into docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # push images to docker-hub
-  - docker push timmcnamaradev/multi-client
+
   - docker push timmcnamaradev/multi-nginx
   - docker push timmcnamaradev/multi-server
   - docker push timmcnamaradev/multi-worker
+  - docker push timmcnamaradev/multi-client
