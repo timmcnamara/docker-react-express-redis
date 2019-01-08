@@ -1,4 +1,4 @@
-sudo: requided
+sudo: required
 services:
   - docker
 
@@ -11,13 +11,13 @@ script:
 after_success:
   - docker build -t timmcnamaradev/multi-nginx:latest ./nginx
   - docker build -t timmcnamaradev/multi-server:latest ./server
-  - docker build -t timmcnamaradev/multi-worker:latest ./worker
   - docker build -t timmcnamaradev/multi-client:latest ./client
+  - docker build -t timmcnamaradev/multi-worker:latest ./worker
+
   # Log into docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # push images to docker-hub
-
   - docker push timmcnamaradev/multi-nginx:latest
   - docker push timmcnamaradev/multi-server:latest
-  - docker push timmcnamaradev/multi-worker:latest
   - docker push timmcnamaradev/multi-client:latest
+  - docker push timmcnamaradev/multi-worker:latest
