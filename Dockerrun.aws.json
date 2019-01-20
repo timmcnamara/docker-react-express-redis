@@ -3,28 +3,28 @@
   "containerDefinitions": [
     {
       "name": "client",
-      "image": "timmcnamara/multi-client",
+      "image": "timmcnamaradev/multi-client",
       "hostname": "client",
       "essential": false,
       "memory": 127
     },
     {
       "name": "server",
-      "image": "timmcnamara/multi-server",
+      "image": "timmcnamaradev/multi-server",
       "hostname": "api",
       "essential": false,
       "memory": 128
     },
     {
       "name": "worker",
-      "image": "timmcnamara/multi-worker",
+      "image": "timmcnamaradev/multi-worker",
       "hostname": "worker",
       "essential": false,
       "memory": 128
     },
     {
       "name": "nginx",
-      "image": "timmcnamara/multi-nginx",
+      "image": "timmcnamaradev/multi-nginx",
       "hostname": "nginx",
       "essential": true,
       "portMappings": [{ "hostPort": 80, "containerPort": 80 }],
