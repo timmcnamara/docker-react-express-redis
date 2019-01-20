@@ -6,7 +6,7 @@
       "image": "timmcnamaradev/multi-client",
       "hostname": "client",
       "essential": false,
-      "memory": 127
+      "memory": 128
     },
     {
       "name": "server",
